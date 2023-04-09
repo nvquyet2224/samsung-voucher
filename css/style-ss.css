@@ -1,0 +1,1065 @@
+body{-webkit-animation:page-start .5s steps(1,end) 0s forwards;animation:page-start .5s steps(1,end) 0s forwards}@-webkit-keyframes page-start{from{visibility:hidden}to{visibility:visible}}@keyframes page-start{from{visibility:hidden}to{visibility:visible}}
+@charset "utf-8";html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video{margin:0;padding:0;border:0;vertical-align:baseline}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section{display:block}
+html{-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:-moz-none;-ms-user-select:none}
+body {font-family:"SamsungOne", arial;line-height:1;color:#000;-webkit-text-size-adjust:none;}
+
+
+*{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;-webkit-font-smoothing:antialiased}
+*, *:before,*:after{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+
+ol, ul{list-style:none}
+blockquote, q{	quotes:none}
+blockquote:before, blockquote:after, q:before, q:after{content:'';content:none}
+:focus{outline:0;}
+a{text-decoration:none}
+p{text-decoration:none;font-weight:normal;font-size:100%;-webkit-text-size-adjust:none;line-height:1.4}
+strong{text-decoration:none;font-weight:bold}
+cite, em, i{text-decoration:none;font-weight:normal;font-family:Arial, Helvetica, sans-serif;line-height:1;vertical-align:baseline}
+pre, code{text-decoration:none}
+ins{text-decoration:none}
+sup{text-decoration:none;bottom:5px;font-size:70%;vertical-align:baseline;font-weight:normal;position:relative}
+dl dt{text-decoration:none}
+dd{text-decoration:none}
+mark{text-decoration:none;font-weight:normal;vertical-align:baseline}
+del{text-decoration:line-through}
+img[alt]{font-size:0}
+
+h1, h2, h3, h4, h5, h6{font-size:100%;font-weight:normal;-webkit-text-size-adjust:none;line-height:1.2}
+
+@font-face {
+	font-family:'SamsungOne';
+	src:url(//cdn.samsung.com/etc/designs/smg/global/fonts/SamsungOne-400.woff2);
+	src:url(//cdn.samsung.com/etc/designs/smg/global/fonts/SamsungOne-400.woff2?#iefix) format("embedded-opentype"), url(//cdn.samsung.com/etc/designs/smg/global/fonts/SamsungOne-400.woff2) format("woff2"), url(//cdn.samsung.com/etc/designs/smg/global/fonts/SamsungOne-400.woff) format("woff"), url(//cdn.samsung.com/etc/designs/smg/global/fonts/SamsungOne-400.ttf) format("truetype");
+	font-weight:normal;
+	font-style:normal;
+}
+@font-face {
+	font-family:'SamsungOne700';
+	src:url(//cdn.samsung.com/etc/designs/smg/global/fonts/SamsungOne-700.eot);
+	src:url(//cdn.samsung.com/etc/designs/smg/global/fonts/SamsungOne-700.eot?#iefix) format("embedded-opentype"), url(//cdn.samsung.com/etc/designs/smg/global/fonts/SamsungOne-700.woff2) format("woff2"), url(//cdn.samsung.com/etc/designs/smg/global/fonts/SamsungOne-700.woff) format("woff"), url(//cdn.samsung.com/etc/designs/smg/global/fonts/SamsungOne-700.ttf) format("truetype");
+	font-weight:bold;
+	font-style:normal
+}
+@font-face {
+    font-family:'iCielSamsungSharpSansBold';
+	src:url(//cdn.samsung.com/etc/designs/smg/vn/font/SamsungSharpSans-Bold-UTF8.woff2);
+    font-weight:normal;
+    font-style:normal;
+}
+
+/*FULLPAGE*/
+.fs_main {
+	position:relative;
+	width:100%;
+	overflow:hidden;
+}
+.fs_content {
+	position:relative;
+	width:100%;
+	display: block;
+	padding:40px 0 80px 0;
+}
+
+.fs_bg {
+	position:absolute;
+	left:0;
+	top:0;
+	width:100%;
+	height:100%;
+	display:block;
+}
+.fs_bg div {
+	position:absolute;
+	left:0;
+	top:0;
+	width:100%;
+	height:100%;
+	background-repeat:no-repeat;
+	background-position:center center;
+	background-size:cover;
+}
+.fs_bg_pc::after {
+	content: '';
+	position: absolute;
+	left:0;
+	bottom:0;
+	width:100%;
+	height:100%;
+	background:url(https://images.samsung.com/is/image/samsung/p5/vn/offer/voucher-uu-dai-mung-sinh-nhat-50-nam/bg_form_pc_bot.png?$ORIGIN_PNG$) no-repeat center bottom;
+	background-size:100% auto;
+}
+.fs_bg_sp::after{
+	content: '';
+	position: absolute;
+	left:0;
+	bottom:0;
+	width:100%;
+	height:100%;
+	background:url(https://images.samsung.com/is/image/samsung/p5/vn/offer/voucher-uu-dai-mung-sinh-nhat-50-nam/bg_form_sp_bot.png?$ORIGIN_PNG$) no-repeat center bottom;
+	background-size:100% auto;
+}
+.fs_bg_sp {
+	display:none;
+}
+
+.fs_logo{
+	position: absolute;
+	top:20px;
+	right:4%;
+	width: auto;
+	height: auto;
+}
+.fs_logo img {
+	width:auto;
+	height: auto;
+	max-width:155px;
+}
+.fs_title {
+	position:relative;
+	display:block;
+	text-align:center;
+}
+.fs_title h2 {
+	font-family:'iCielSamsungSharpSansBold';
+	font-size:40px;
+	color:#fff;
+	text-transform:uppercase;
+	margin-bottom:20px;
+}
+.fs_title p{
+	margin-bottom:20px;
+}
+.fs_title img{
+	width:auto;
+	height: auto;
+	max-width: 779px;
+	margin:0 auto;
+}
+
+/*Register popup*/
+.fs_form_popup {
+	position:absolute;
+	left:0;
+	top:0;
+	width:100%;
+	height:100%;
+	padding:8vw 0;
+	background-color:rgba(0,0,0,0.6);
+	z-index:10;
+	overflow:hidden;
+	text-align:center;
+	visibility:hidden;
+	opacity:0;
+	-webkit-transition:all 0.3s ease-in-out 0s, visibility 0s linear 0.3s;	
+	transition:all 0.3s ease-in-out 0s, visibility 0s linear 0.3s;
+}
+.fs_form_popup.fs_active {
+	opacity:1;
+	visibility:visible;
+	-webkit-transition-delay:0s, 0s;
+	transition-delay:0s, 0s
+}
+.fs_form_inner{
+	position: relative;
+	display: inline-block;
+	vertical-align:top;
+	width:90%;
+	height: auto;
+	max-width: 600px;
+}
+.fs_form_inner.fs_hide{
+	display:none;
+}
+.fs_thanks, .fs_errors{
+	padding:60px 20px;
+	text-align:center;
+}
+.fs_form_inner .fs_bg div{
+	background-position: center bottom;
+}
+.fs_form_inner .fs_title h2{
+	font-size:24px;
+}
+.fs_form_inner .fs_title p{
+	line-height:0;
+}
+.fs_form_inner .fs_title img{
+	max-width: 64px;
+}
+.fs_form_outer p{
+	font-family:'SamsungOne700';
+	font-weight: normal;
+	font-style: normal;
+	color:#fff;
+	font-size:16px;
+	margin-bottom:30px;
+}
+.fs_form_outer{
+	position: relative;
+	display: block;
+	width:100%;
+	height:auto;
+	z-index: 1;
+}
+.fs_form_inner  .fs_box_but{
+	padding:20px 0 50px 0;
+}
+.fs_form_inner  .fs_but{
+	position: relative;
+	display:inline-block;
+	width:310px;
+	height:60px;
+	line-height:64px;
+	background: url(https://images.samsung.com/is/image/samsung/p5/vn/offer/voucher-uu-dai-mung-sinh-nhat-50-nam/bg_pop_but.png?$ORIGIN_PNG$) no-repeat center center;
+	font-family:'iCielSamsungSharpSansBold';
+	font-weight: normal;
+	font-style: normal;
+	color:#41290b;
+	font-size: 20px;
+	text-transform:uppercase;
+	-webkit-transition: opacity 0.3s ease-in-out;
+	transition: opacity 0.3s ease-in-out;
+}
+.fs_form_inner  .fs_but:hover{
+	opacity:0.7;
+}
+.fs_form_inner .fs_tv img {
+	max-width:272px;
+}
+.fs_close_pop{
+	position: absolute;
+	right:15px;
+	top:15px;
+	width:40px;
+	height:40px;
+	background:url(https://images.samsung.com/is/image/samsung/p5/vn/offer/voucher-uu-dai-mung-sinh-nhat-50-nam/icon_close.png?$ORIGIN_PNG$) no-repeat center center;
+	cursor: pointer;
+}
+
+
+/* .fs_form_inner {
+	top:-80px;
+}
+
+.fs_form_inner, .fs_form_popup  .fs_normal_banner{
+	position:relative;
+	display:inline-block;
+	width:90%;
+	height:auto;
+	max-width:1170px;
+	vertical-align:middle;
+}
+
+.fs_form_inner .fs_title h2 {
+	font-size:40px;
+} */
+
+
+/*Form*/
+.fs_form_box {
+	position:relative;
+	display:block;
+	width:84%;
+	height:auto;
+	margin:0 auto;
+	max-width:1200px;
+	padding:40px 5% 80px;
+	background: -webkit-linear-gradient(270deg, rgba(17,27,41,0.6) 40%, rgba(17,27,41,0) 100%);
+	background:linear-gradient(180deg, rgba(17,27,41,0.6) 40%, rgba(17,27,41,00) 100%);
+	-webkit-border-radius:20px 20px 0 0;
+	border-radius:20px 20px 0 0;
+}
+.fs_form_box .fs_title h2{
+	margin-bottom:16px;
+}
+.fs_group {
+	position:relative;
+	display:block;
+}
+.fs_group::after, .fs_col_outer::after{
+	content: '';
+	position: relative;
+	display: block;
+	width: 100%;
+	height:0;
+	clear: both;
+}
+.fs_col{
+	position: relative;
+	display: block;
+	width:50%;
+	float: left;
+	padding-top:30px;
+}
+.fs_col:nth-child(1){
+	padding-right:15px;
+}
+.fs_col:nth-child(2){
+	padding-left:15px;
+}
+.fs_col_outer{
+	position: relative;
+	display: block;
+	width:100%;
+	height: auto;
+}
+.fs_small_col {
+	position: relative;
+	display: block;
+	width:33.3333%;
+	float: left;
+}
+.fs_small_col:nth-child(1){
+	padding-right:8px;
+}
+.fs_small_col:nth-child(2){
+	padding:0 4px;
+}
+.fs_small_col:nth-child(3){
+	padding-left:8px;
+}
+.fs_group input[type="tel"], 
+.fs_group input[type="text"], 
+.fs_group input[type="password"],
+.fs_group input[type="number"],
+.fs_select_header {
+	width:100%;
+	height:56px;
+	padding:0 25px;
+	line-height:54px;
+	border:1px solid #fff;
+	-webkit-border-radius:50px;
+	border-radius:50px;
+}
+
+.fs_group input[type="tel"], 
+.fs_group input[type="text"], 
+.fs_group input[type="password"],
+.fs_group input[type="number"],
+.fs_select_header p,
+.fs_select_box li {
+	font-family:"SamsungOne";
+	font-weight: normal;
+	font-style:normal;
+	color:#fff;
+	font-size:16px;
+}
+
+.fs_box_but{
+	position: relative;
+	display: block;
+	width:100%;
+	text-align:center;
+}
+
+.fs_error_txt{
+	position: absolute;
+	left:0;
+	top:7px;
+	width:100%;
+	height: auto;
+	padding:0 25px;	
+	display:none;
+}
+.fs_error_txt p{
+	font-family:"SamsungOne";
+	font-weight: normal;
+	font-style:normal;
+	color:#e05252;
+	font-size:14px;
+	white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.fs_show_error .fs_error_txt{
+	display: block;
+}
+
+.fs_group input[type="tel"], 
+.fs_group input[type="text"], 
+.fs_group input[type="password"],
+.fs_group input[type="number"] {
+	-webkit-appearance:none;
+	position:relative;
+	display:block;
+	background-color:transparent;
+}
+
+.fs_group input::placeholder {
+	color:#fff;
+}
+.fs_group input:-ms-input-placeholder { 
+  color:#fff;
+}
+.fs_group input::-ms-input-placeholder{
+	color:#fff;
+}
+.fs_group input::-moz-placeholder {
+	color: #fff; 
+	opacity:1;
+}
+
+.fs_group .fs_show_error input::placeholder {
+	color:#e05252;
+}
+.fs_group .fs_show_error input:-ms-input-placeholder { 
+  color:#e05252;
+}
+.fs_group .fs_show_error input::-ms-input-placeholder{
+	color:#e05252;
+}
+.fs_group .fs_show_error input::-moz-placeholder {
+	color: #e05252; 
+	opacity:1;
+}
+
+.fs_group .fs_show_error input[type="text"]{
+	border:1px solid #e05252;
+}
+
+
+.fs_form_box button {
+	position:relative;
+	display:inline-block;
+	width:311px;
+	height:60px;
+	line-height:60px;
+	background:url(https://images.samsung.com/is/image/samsung/p5/vn/offer/voucher-uu-dai-mung-sinh-nhat-50-nam/bg_register_but.png?$ORIGIN_PNG$) no-repeat center center;
+	background-size: cover;
+	border:none;
+	font-family:"SamsungOne700";
+	font-weight:normal;
+	font-style:normal;
+	color:#41290b;
+	font-size:18px;
+	text-align:center;
+	cursor:pointer;
+	-webkit-transition:opacity 0.3s ease-in-out;
+	transition:opacity 0.3s ease-in-out;
+	text-transform:uppercase;
+}
+
+.fs_form_box button:hover {
+	opacity:0.7;
+}
+
+
+
+
+/*Select List*/
+.fs_select {
+	position:relative;
+	display:block;
+	width:100%;
+	height:auto;
+}
+
+#fs_date{
+	z-index: 6;
+}
+#fs_month{
+	z-index: 5;
+}
+#fs_year{
+	z-index: 4;
+}
+#fs_city{
+	z-index: 3;
+}
+#fs_reasion{
+	z-index: 2;
+}
+
+.fs_select_header {
+	position:relative;
+	display:block;
+	cursor:pointer;
+	z-index:2;
+}
+.fs_select_header::after{
+	content:'';
+	position:absolute;
+	right:21px;
+	top:50%;
+	width:12px;
+	height:12px;
+	margin-top:-6px;
+	pointer-events:none;
+	border-right:2px solid #fff;
+	border-bottom:2px solid #fff;
+	-webkit-transform:rotate(45deg);
+	transform:rotate(45deg);
+	-webkit-transition:all 0.3s ease-in-out;
+	transition:all 0.3s ease-in-out;
+}
+.fs_select_header p {
+	display: inline-block;
+	vertical-align: middle;
+	font-weight:normal;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+	overflow:hidden;
+}
+.fs_select_box{
+	position:absolute;
+	left:0;
+	top:100%;
+	width:100%;
+	height:auto;
+	opacity:0;
+	visibility:hidden;
+	-webkit-transition:all 0.3s ease-in-out 0s, visibility 0s linear 0.3s;
+	transition:all 0.3s ease-in-out 0s, visibility 0s linear 0.3s;
+}
+.fs_select_box ul{
+	position:relative;
+	display:block;
+	width:100%;
+	height:auto;
+	max-height:300px;
+	padding-top:2px;
+	overflow-x:hidden;
+	overflow-y:auto;
+}
+.fs_select_box li {
+	position:relative;
+	display:block;
+	width:100%;
+	height:auto;
+	border-bottom:1px dotted #ddd;
+	background-color:#fff;
+	padding:15px;
+	cursor:pointer;
+	-webkit-transition:all 0.3s ease-in-out;
+	transition:all 0.3s ease-in-out;
+	color:#000;
+}
+.fs_select_box li:not(.selected):hover, 
+.fs_select_box li.selected{
+	background-color:#ccc;
+}
+.fs_select_box li.selected::after{
+	content:'';
+	position:absolute;
+	left:0;
+	top:0;
+	width:100%;
+	height:100%;
+}
+.fs_select.open .fs_select_box{
+	opacity:1;
+	visibility:visible;
+	-webkit-transition-delay:0s, 0s;
+	transition-delay:0s, 0s
+}
+.fs_select.open .fs_select_header::after{
+	-webkit-transform:rotate(-135deg);
+	transform:rotate(-135deg)
+}
+
+
+/*CheckBox*/
+.fs_check_box li{
+	position: relative;
+	display: block;
+	line-height:30px;
+	margin-bottom:1vw;
+}
+.fs_check_input{
+	position:absolute;
+	left:0;
+	top:0;
+	width:30px;
+	height:30px;
+	padding:0;
+	margin:0;
+	border:none;
+	background:none;
+	opacity:0;
+	-webkit-appearance:none;
+}
+.fs_check_label{
+	display:inline-block;
+	vertical-align:middle;
+	padding-left:48px;
+    font-family:'SamsungOne';
+    font-weight: normal;
+    font-style: normal;
+    cursor:pointer;
+	font-size:16px;
+	color:#fff;
+	line-height:1.4;
+}
+.fs_check_label a{
+	text-decoration:underline;
+}
+.fs_check_label::before {
+    content:"";
+    position:absolute;
+    left:0;
+	top:0;
+    height:30px;
+    width:30px;
+    border:2px solid #fff;
+    -webkit-border-radius:50%;
+    border-radius:50%;
+}
+.fs_check_box li.fs_check_error .fs_check_label::before{
+	border:2px solid #e05252;
+}
+.fs_check_box li.fs_check_error .fs_check_label::after{
+	display:none;
+}
+.fs_check_label::after {
+    content:"";
+    position:absolute;
+    left:7px;
+	top:7px;
+    height:16px;
+	width:16px;
+	background-color:#fff;
+    -webkit-border-radius:50%;
+	border-radius:50%;
+	opacity:0;
+	-webkit-transition:opacity 0.3s ease-in-out;
+	transition:opacity 0.3s ease-in-out;
+}
+.fs_check_input:checked + .fs_check_label::after{
+    opacity:1;
+}
+
+.fs_form_box button::before {
+	content:'';
+	position:absolute;
+	left:50%;
+	top:50%;
+	width:40px;
+	height:40px;
+	margin:-20px 0 0 -20px;
+	border-left:3px solid #111b29;
+	border-top:3px solid #111b29;
+	-webkit-border-radius:50%;
+	border-radius:50%;
+	opacity:0;
+}
+.fs_form_box button.is-sending::before {
+	opacity: 1;
+	-webkit-animation:rotate360 1.5s infinite linear running;
+	animation:rotate360 1.5s infinite linear running;
+}
+.fs_form_box button.is-sending{
+	font-size:0;
+}
+
+@-webkit-keyframes rotate360 {
+    0%{
+		-webkit-transform:rotate(0deg);
+        transform:rotate(0deg);
+	}
+    100%{
+		-webkit-transform:rotate(360deg);
+        transform:rotate(360deg);
+    }
+}
+@keyframes rotate360{
+	0%{
+		-webkit-transform:rotate(0deg);
+        transform:rotate(0deg);
+	}
+    100%{
+		-webkit-transform:rotate(360deg);
+        transform:rotate(360deg);
+    }
+}
+
+@media screen and (max-width:1280px) {
+	.fs_form_box{
+		width:90%;
+	}
+	.fs_group input[type="tel"], .fs_group input[type="text"], 
+	.fs_group input[type="password"], .fs_group input[type="number"], .fs_select_header{
+		padding:0 15px;
+	}
+	.fs_select_header::after{
+		right:15px;
+	}
+}
+
+
+
+/*Landscape mobile*/
+@media screen and (max-width:1100px) {
+	.fs_bg_pc{
+		display:none;
+	}
+	.fs_bg_sp{
+		display: block;
+	}
+	.fs_content{
+		padding:60px 0 80px 0;
+	}
+	.fs_logo{
+		position: relative;
+		width:100%;
+		text-align: center;
+		right: auto;
+		top:auto;
+		margin-bottom:22px;
+	}
+	.fs_title h2{
+		font-size:48px;
+	}
+	.fs_title img {
+		width: 68%;
+		max-width:580px;
+	}
+	.fs_form_box{
+		width:100%;
+		max-width:inherit;
+		padding:60px 0 80px 0;
+		-webkit-border-radius:0;
+		border-radius:0;
+	}
+	.fs_group{
+		max-width:640px;
+		margin:0 auto;
+	}
+	.fs_col{
+		width:100%;
+		float: none;
+	}
+	.fs_col:nth-child(1), .fs_col:nth-child(2){
+		padding:40px 0 0 0;
+	}
+	.fs_col:nth-child(2){
+		margin-bottom:0;
+	}
+	.fs_error_txt{
+		top:17px;
+	}
+	.fs_col.has-recaptcha{
+		text-align:center;
+		margin-bottom: 40px !important;
+	}
+	.fs_col .g-recaptcha{
+		display: inline-block;
+	}
+	.fs_group input[type="tel"], .fs_group input[type="text"], 
+	.fs_group input[type="password"], .fs_group input[type="number"] {
+		padding:5px 25px;
+		height:80px;
+		line-height:inherit;
+	}
+	.fs_select_header{
+		padding:0 25px;
+		height:80px;
+		line-height:78px;
+	}
+	.fs_select_box ul{
+		max-height:220px;
+		-webkit-overflow-scrolling: touch;
+	}
+	.fs_select_box li{
+		padding:12px 15px;
+	}
+	.fs_group input[type="tel"], .fs_group input[type="text"], .fs_group input[type="password"], 
+	.fs_group input[type="number"], .fs_select_header p, .fs_select_box li, .fs_check_label{
+		font-size:24px;
+	}
+	.fs_check_box li{
+		line-height:48px;
+	}
+	.fs_check_label{
+		padding-left:64px;
+	}
+	.fs_check_label::before, .fs_check_input{
+		width:48px;
+		height:48px;
+	}
+	
+	.fs_select_header::after{
+		right: 20px;
+		width:16px;
+		height:16px;
+		margin-top:-10px;
+		border-right: 3px solid #fff;
+		border-bottom: 3px solid #fff;
+	}
+	.fs_check_label::after{
+		left: 12px;
+		top: 12px;
+		height: 22px;
+		width: 22px;
+	}
+	.fs_form_box button{
+		-webkit-transition:none;
+		transition:none;
+		background: url(https://images.samsung.com/is/image/samsung/p5/vn/offer/voucher-uu-dai-mung-sinh-nhat-50-nam/bg_register_but_sp.png?$ORIGIN_PNG$) no-repeat center center;
+		width:640px;
+		height:80px;
+		line-height:80px;
+		font-size:36px;
+		max-width: inherit;
+	}
+	.fs_form_box button:hover{
+		opacity:1;
+	}
+	.fs_select_box li{
+		-webkit-transition:none;
+		transition:none;
+	}
+	.fs_select_box li:not(.selected):hover{
+		background-color:#fff;
+	}
+
+	/*PopUp*/
+	.fs_form_popup{
+		padding:40px 0;
+	}
+	.fs_form_inner  .fs_but{
+		-webkit-transition:none;
+		transition:none;
+	}
+	.fs_form_inner  .fs_but:hover{
+		opacity:1;
+	}
+}
+
+@media screen and (max-width:900px) and (orientation :landscape) {
+	/*Popup*/
+	.fs_form_outer p{
+		margin-bottom:15px;
+	}
+	.fs_form_inner .fs_box_but {
+		padding:10px 0 30px 0;
+	}
+}
+
+@media screen and (max-width:700px) {
+	.fs_content{
+		padding:40px 0 80px 0;
+	}
+	.fs_title h2{
+		font-size:40px;
+	}
+	.fs_title img {
+		max-width:514px;
+	}
+
+	.fs_form_box{
+		padding:40px 0;
+	}
+	.fs_group{
+		width:90%;
+		margin:0 auto;
+	}
+	.fs_col:nth-child(1), .fs_col:nth-child(2){
+		padding:30px 0 0 0;
+	}
+	.fs_error_txt{
+		top:10px;
+	}
+	.fs_group input[type="tel"], .fs_group input[type="text"], 
+	.fs_group input[type="password"], .fs_group input[type="number"] {
+		padding:5px 20px;
+		height:60px;
+		line-height:inherit;
+	}
+	.fs_error_txt{
+		padding:0 20px;
+	}
+	.fs_error_txt p{
+		font-size:12px;
+	}
+	.fs_select_header{
+		padding:0 20px;
+		height:60px;
+		line-height:58px;
+	}
+	.fs_group input[type="tel"], .fs_group input[type="text"], .fs_group input[type="password"], 
+	.fs_group input[type="number"], .fs_select_header p, .fs_select_box li, .fs_check_label{
+		font-size:16px;
+	}
+	.fs_check_box li{
+		line-height:30px;
+	}
+	.fs_check_label{
+		padding-left:44px;
+	}
+	.fs_check_label::before, .fs_check_input{
+		width:30px;
+		height:30px;
+	}
+	.fs_check_label::after {
+		left: 7px;
+		top: 7px;
+		height: 16px;
+		width: 16px;
+	}
+	.fs_select_header::after{
+		right: 20px;
+		width: 14px;
+		height: 14px;
+		margin-top: -10px;
+		border-right: 2px solid #fff;
+		border-bottom: 2px solid #fff;
+	}
+	.fs_form_box button{
+		background: url(https://images.samsung.com/is/image/samsung/p5/vn/offer/voucher-uu-dai-mung-sinh-nhat-50-nam/bg_register_but_sp.png?$ORIGIN_PNG$) no-repeat center center;
+		width:480px;
+		height:60px;
+		line-height:60px;
+		font-size:30px;
+		background-size: cover;
+	}
+}
+
+@media screen and (max-width:600px) {
+	.fs_title h2{
+		font-size:36px;
+	}
+}
+
+@media screen and (max-width:560px) {
+	.fs_title h2{
+		font-size:26px;
+	}
+	.fs_group input[type="tel"], .fs_group input[type="text"], 
+	.fs_group input[type="password"], .fs_group input[type="number"] {
+		padding:5px 15px;
+		height: 46px;
+	}
+	.fs_error_txt{
+		padding:0 15px;
+	}
+	.fs_select_header{
+		padding:0 15px;
+		height: 46px;
+		line-height: 44px;
+	}
+	.fs_group input[type="tel"], .fs_group input[type="text"], .fs_group input[type="password"], 
+	.fs_group input[type="number"], .fs_select_header p, .fs_select_box li, .fs_check_label{
+		font-size:14px;
+	}
+	.fs_select_header::after{
+		right: 10px;
+		width: 10px;
+		height: 10px;
+		margin-top: -8px;
+		border-right: 1px solid #fff;
+		border-bottom: 1px solid #fff;
+	}
+	.fs_check_label::before, .fs_check_input{
+		width:26px;
+		height:26px;
+	}
+	.fs_check_label{
+		padding-left:36px;
+	}
+	.fs_check_label::after {
+		left: 6px;
+		top: 6px;
+		height: 14px;
+		width: 14px;
+	}
+	.fs_form_box button{
+		width: 368px;
+		height:46px;
+		line-height:46px;
+		font-size: 24px;
+	}
+	/*PopUp*/
+	.fs_form_inner .fs_title h2{
+		font-size:20px;
+	}
+	.fs_form_outer p{
+		margin-bottom:20px;
+		font-size:15px;
+	}
+	.fs_form_inner .fs_box_but{
+		padding:10px 0 30px 0;
+	}
+	.fs_form_inner .fs_tv img{
+		width:100%;
+	}
+
+}
+ 
+@media screen and (max-width:390px) {
+	.fs_title h2{
+		font-size:22px;
+	}
+	.fs_small_col:nth-child(1){
+		padding-right:4px;
+	}
+	.fs_small_col:nth-child(2){
+		padding:0 2px;
+	}
+	.fs_small_col:nth-child(3){
+		padding-left:4px;
+	}
+	.fs_group input[type="tel"], .fs_group input[type="text"], .fs_group input[type="password"], .fs_group input[type="number"]{
+		padding:5px 12px;
+	}
+	.fs_error_txt{
+		padding:0 12px;
+	}
+	.fs_select_header{
+		padding:0 12px;
+	}
+	.fs_form_box button{
+		width:100%;
+		background-size:100% auto;
+	}
+	.fs_group input[type="tel"], .fs_group input[type="text"], .fs_group input[type="password"],
+	.fs_group input[type="number"], .fs_select_header p, .fs_select_box li, .fs_check_label{
+		font-size:13px;
+	}
+	
+	/*PopUp*/
+	.fs_form_inner .fs_title h2{
+		font-size:18px;
+	}
+	.fs_form_outer p{
+		font-size:14px;
+	}
+	.fs_form_inner .fs_but{
+		width:280px;
+		height:54px;
+		line-height: 58px;
+		background-size: contain;
+		font-size:18px;
+	}
+
+}
+
+@media screen and (max-width:370px) {
+	/*PopUp*/
+	.fs_form_inner  .fs_title h2{
+		font-size:14px;
+	}
+	.fs_form_outer p{
+		font-size:13px;
+	}
+	.fs_form_inner .fs_but{
+		width:240px;
+		height:46px;
+		line-height: 52px;
+		font-size:16px;
+	}
+}
+
+@media screen and (max-width:350px) {
+	.fs_title h2{
+		font-size:20px;
+	}
+	.fs_form_box button{
+		width: 240px;
+		height:46px;
+		background: url(https://images.samsung.com/is/image/samsung/p5/vn/offer/voucher-uu-dai-mung-sinh-nhat-50-nam/bg_register_but.png?$ORIGIN_PNG$) no-repeat center center;
+		background-size: cover;
+	
+	}
+}
